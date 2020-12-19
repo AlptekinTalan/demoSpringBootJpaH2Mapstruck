@@ -1,9 +1,5 @@
 package com.digitalplanet.evaluation.gizemsertkaya.web;
 
-import com.digitalplanet.evaluation.gizemsertkaya.mapper.VehicleMapper;
-import com.digitalplanet.evaluation.gizemsertkaya.model.Car;
-import com.digitalplanet.evaluation.gizemsertkaya.model.Truck;
-import com.digitalplanet.evaluation.gizemsertkaya.model.Vehicle;
 import com.digitalplanet.evaluation.gizemsertkaya.modelDto.CarDto;
 import com.digitalplanet.evaluation.gizemsertkaya.modelDto.TruckDto;
 import com.digitalplanet.evaluation.gizemsertkaya.modelDto.VehicleDto;
@@ -25,7 +21,7 @@ public class AppController {
     @RequestMapping("/")
     @ResponseBody
     public String welcome() {
-        return "Welcome to Gizem Sertlaya com.digitalplanet.evaluation";
+        return "Welcome to Gizem Sertkaya com.digitalplanet.evaluation";
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/car/list")
