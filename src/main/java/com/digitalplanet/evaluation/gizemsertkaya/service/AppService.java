@@ -9,7 +9,11 @@ public interface AppService {
 
     List<CarDto> findCars();
 
+    CarDto findCarById(Long id);
+
     List<TruckDto> findTrucks();
+
+    TruckDto findTruckById(Long id);
 
     void createCar(CarDto car);
 

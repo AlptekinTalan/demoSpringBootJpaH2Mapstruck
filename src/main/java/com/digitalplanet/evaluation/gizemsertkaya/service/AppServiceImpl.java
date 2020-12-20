@@ -41,6 +41,13 @@ public class AppServiceImpl implements AppService{
         }
         return carDtos;
     }
+
+    public CarDto findCarById(Long id) {
+        Car car=carRepository.findById(id);
+        CarDto carDto =  VehicleMapper.INSTANCE.toCarDto(car);
+        return carDto;
+    }
+
     public List<TruckDto> findTrucks() {
         List<Truck> trucks = truckRepository.findAll();
         List<TruckDto> truckDtos = new ArrayList<>();
@@ -48,6 +55,12 @@ public class AppServiceImpl implements AppService{
             truckDtos.add(VehicleMapper.INSTANCE.toTruckDto(trucks.get(i)));
         }
         return truckDtos;
+    }
+
+    public TruckDto findTruckById(Long id) {
+        Truck truck=truckRepository.findById(id);
+        TruckDto truckDto =  VehicleMapper.INSTANCE.toTruckDto(truck);
+        return truckDto;
     }
 
     @Override

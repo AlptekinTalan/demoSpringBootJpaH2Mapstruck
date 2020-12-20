@@ -4,6 +4,7 @@ import com.digitalplanet.evaluation.gizemsertkaya.modelDto.CarDto;
 import com.digitalplanet.evaluation.gizemsertkaya.modelDto.TruckDto;
 import com.digitalplanet.evaluation.gizemsertkaya.modelDto.VehicleDto;
 import com.digitalplanet.evaluation.gizemsertkaya.service.AppService;
+import net.bytebuddy.asm.Advice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @Controller
 public class AppController {
 
@@ -42,13 +44,13 @@ public class AppController {
         List<CarDto> cars = appService.findCars();
         List<TruckDto> trucks = appService.findTrucks();
 
-        List<VehicleDto> vehicles=new ArrayList<>();
+        List<VehicleDto> vehicles = new ArrayList<>();
 
         for (int i = 0; i < cars.size(); i++) {
-            vehicles.add(new VehicleDto(cars.get(i).getId(),cars.get(i).getName()));
+            vehicles.add(new VehicleDto(cars.get(i).getId(), cars.get(i).getName()));
         }
         for (int i = 0; i < trucks.size(); i++) {
-            vehicles.add(new VehicleDto(trucks.get(i).getId(),trucks.get(i).getName()));
+            vehicles.add(new VehicleDto(trucks.get(i).getId(), trucks.get(i).getName()));
         }
         return ResponseEntity.ok(vehicles);
     }
@@ -56,6 +58,12 @@ public class AppController {
     @RequestMapping(value = "/car/add", method = RequestMethod.POST)
     public ResponseEntity<CarDto> createCar(@RequestBody CarDto carDto) {
         appService.createCar(carDto);
+        return ResponseEntity.ok(carDto);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/car/{id}")
+    public ResponseEntity<CarDto> getCarById(@PathVariable("id") Long id) {
+        CarDto carDto = appService.findCarById(id);
         return ResponseEntity.ok(carDto);
     }
 
@@ -68,6 +76,12 @@ public class AppController {
     @RequestMapping(value = "/truck/add", method = RequestMethod.POST)
     public ResponseEntity<TruckDto> createCar(@RequestBody TruckDto truckDto) {
         appService.createTruck(truckDto);
+        return ResponseEntity.ok(truckDto);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/truck/{id}")
+    public ResponseEntity<TruckDto> getTruckById(@PathVariable("id") Long id) {
+        TruckDto truckDto = appService.findTruckById(id);
         return ResponseEntity.ok(truckDto);
     }
 
