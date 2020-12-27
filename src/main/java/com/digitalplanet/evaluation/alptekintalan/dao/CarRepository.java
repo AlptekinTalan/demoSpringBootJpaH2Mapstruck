@@ -1,6 +1,6 @@
-package com.digitalplanet.evaluation.gizemsertkaya.dao;
+package com.digitalplanet.evaluation.alptekintalan.dao;
 
-import com.digitalplanet.evaluation.gizemsertkaya.model.Car;
+import com.digitalplanet.evaluation.alptekintalan.model.Car;
 
 import java.util.List;
 

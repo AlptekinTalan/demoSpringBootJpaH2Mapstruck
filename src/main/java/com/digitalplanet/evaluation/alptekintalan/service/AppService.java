@@ -1,7 +1,7 @@
-package com.digitalplanet.evaluation.gizemsertkaya.service;
+package com.digitalplanet.evaluation.alptekintalan.service;
 
-import com.digitalplanet.evaluation.gizemsertkaya.modelDto.CarDto;
-import com.digitalplanet.evaluation.gizemsertkaya.modelDto.TruckDto;
+import com.digitalplanet.evaluation.alptekintalan.modelDto.CarDto;
+import com.digitalplanet.evaluation.alptekintalan.modelDto.TruckDto;
 
 import java.util.List;
 

@@ -1,12 +1,12 @@
-package com.digitalplanet.evaluation.gizemsertkaya.model;
+package com.digitalplanet.evaluation.alptekintalan.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="t_car")
-public class Car extends Vehicle{
+@Table(name="t_truck")
+public class Truck extends Vehicle{
     @Column(name="name")
     private String name;
 
@@ -23,4 +23,5 @@ public class Car extends Vehicle{
                 "name='" + name + '\'' +
                 '}';
     }
+
 }

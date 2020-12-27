@@ -1,4 +1,4 @@
-package com.digitalplanet.evaluation.gizemsertkaya.config;
+package com.digitalplanet.evaluation.alptekintalan.config;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

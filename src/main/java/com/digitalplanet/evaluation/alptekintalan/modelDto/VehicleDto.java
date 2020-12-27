@@ -1,4 +1,4 @@
-package com.digitalplanet.evaluation.gizemsertkaya.modelDto;
+package com.digitalplanet.evaluation.alptekintalan.modelDto;
 
 public class VehicleDto {
     private Long id;

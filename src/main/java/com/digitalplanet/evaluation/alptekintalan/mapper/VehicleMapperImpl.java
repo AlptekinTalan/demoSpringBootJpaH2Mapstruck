@@ -1,9 +1,9 @@
-package com.digitalplanet.evaluation.gizemsertkaya.mapper;
+package com.digitalplanet.evaluation.alptekintalan.mapper;
 
-import com.digitalplanet.evaluation.gizemsertkaya.model.Car;
-import com.digitalplanet.evaluation.gizemsertkaya.model.Truck;
-import com.digitalplanet.evaluation.gizemsertkaya.modelDto.CarDto;
-import com.digitalplanet.evaluation.gizemsertkaya.modelDto.TruckDto;
+import com.digitalplanet.evaluation.alptekintalan.model.Car;
+import com.digitalplanet.evaluation.alptekintalan.model.Truck;
+import com.digitalplanet.evaluation.alptekintalan.modelDto.CarDto;
+import com.digitalplanet.evaluation.alptekintalan.modelDto.TruckDto;
 
 public class VehicleMapperImpl implements VehicleMapper {
     @Override
@@ -12,8 +12,8 @@ public class VehicleMapperImpl implements VehicleMapper {
             return null;
         }
         CarDto carDto = new CarDto();
-        carDto.setId(car.getId());
-        carDto.setName(car.getName());
+        carDto.setCardtoid(car.getId());
+        carDto.setCardtoname(car.getName());
 
         return carDto;
     }
@@ -34,8 +34,8 @@ public class VehicleMapperImpl implements VehicleMapper {
             return null;
         }
         Car car = new Car();
-        car.setId(CarDto.getId());
-        car.setName(CarDto.getName());
+        car.setId(CarDto.getCardtoid());
+        car.setName(CarDto.getCardtoname());
 
         return car;
     }

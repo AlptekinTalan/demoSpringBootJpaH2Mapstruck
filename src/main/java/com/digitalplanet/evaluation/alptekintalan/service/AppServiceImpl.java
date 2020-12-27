@@ -1,12 +1,12 @@
-package com.digitalplanet.evaluation.gizemsertkaya.service;
+package com.digitalplanet.evaluation.alptekintalan.service;
 
-import com.digitalplanet.evaluation.gizemsertkaya.dao.CarRepository;
-import com.digitalplanet.evaluation.gizemsertkaya.dao.TruckRepository;
-import com.digitalplanet.evaluation.gizemsertkaya.mapper.VehicleMapper;
-import com.digitalplanet.evaluation.gizemsertkaya.model.Car;
-import com.digitalplanet.evaluation.gizemsertkaya.model.Truck;
-import com.digitalplanet.evaluation.gizemsertkaya.modelDto.CarDto;
-import com.digitalplanet.evaluation.gizemsertkaya.modelDto.TruckDto;
+import com.digitalplanet.evaluation.alptekintalan.dao.CarRepository;
+import com.digitalplanet.evaluation.alptekintalan.dao.TruckRepository;
+import com.digitalplanet.evaluation.alptekintalan.mapper.VehicleMapper;
+import com.digitalplanet.evaluation.alptekintalan.model.Car;
+import com.digitalplanet.evaluation.alptekintalan.model.Truck;
+import com.digitalplanet.evaluation.alptekintalan.modelDto.CarDto;
+import com.digitalplanet.evaluation.alptekintalan.modelDto.TruckDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -67,7 +67,7 @@ public class AppServiceImpl implements AppService{
     public void createCar(CarDto carDto) {
         Car car = VehicleMapper.INSTANCE.toCar(carDto);
         carRepository.create(car);
-        carDto.setId(car.getId());
+        carDto.setCardtoid(car.getId());
     }
 
     @Override

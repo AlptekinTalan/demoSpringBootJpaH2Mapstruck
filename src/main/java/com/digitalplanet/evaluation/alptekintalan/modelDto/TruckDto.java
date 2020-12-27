@@ -1,6 +1,6 @@
-package com.digitalplanet.evaluation.gizemsertkaya.modelDto;
+package com.digitalplanet.evaluation.alptekintalan.modelDto;
 
-public class CarDto {
+public class TruckDto {
     private Long id;
     private String name;
 
@@ -20,10 +20,9 @@ public class CarDto {
         this.name = name;
     }
 
-
     @Override
     public String toString() {
-        return "CarDto{" +
+        return "TruckDto{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

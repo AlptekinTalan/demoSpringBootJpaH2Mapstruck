@@ -1,8 +1,8 @@
-package com.digitalplanet.evaluation.gizemsertkaya.dao;
+package com.digitalplanet.evaluation.alptekintalan.dao;
 
-import com.digitalplanet.evaluation.gizemsertkaya.mapper.VehicleMapper;
-import com.digitalplanet.evaluation.gizemsertkaya.model.Car;
-import com.digitalplanet.evaluation.gizemsertkaya.model.Truck;
+import com.digitalplanet.evaluation.alptekintalan.mapper.VehicleMapper;
+import com.digitalplanet.evaluation.alptekintalan.model.Car;
+import com.digitalplanet.evaluation.alptekintalan.model.Truck;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

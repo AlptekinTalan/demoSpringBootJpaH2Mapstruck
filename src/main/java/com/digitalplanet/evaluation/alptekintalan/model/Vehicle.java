@@ -1,4 +1,4 @@
-package com.digitalplanet.evaluation.gizemsertkaya.model;
+package com.digitalplanet.evaluation.alptekintalan.model;
 
 import javax.persistence.*;
 
