@@ -57,6 +57,17 @@ public class AppController {
         return ResponseEntity.ok(cars);
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/test2")
+    public ResponseEntity<?> test2() {
+
+        int number1=0;
+        int number2=2;
+        int bolum=0;
+        bolum = number2/number1;
+
+        return ResponseEntity.ok("");
+    }
+
     @RequestMapping(method = RequestMethod.GET, value = "/car/list")
     public ResponseEntity<List<CarDto>> getCars() {
         List<CarDto> cars = appService.findCars();
