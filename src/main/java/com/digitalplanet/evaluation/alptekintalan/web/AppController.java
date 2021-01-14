@@ -23,7 +23,7 @@ public class AppController {
     @RequestMapping("/")
     @ResponseBody
     public String welcome() {
-        return "Welcome to Alptekin Talan com.digitalplanet.evaluation";
+        return "Welcome to Alptekin Talan demo project";
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/test1")
@@ -35,7 +35,7 @@ public class AppController {
         Optional<Integer> opt = Optional.ofNullable(numara);
 
         opt.ifPresent(num -> {
-            Double karesi = Math.pow(num , 2);
+            Double karesi = Math.pow(num, 2);
             System.out.println("Sonuç: " + karesi);
         });
 
@@ -44,7 +44,7 @@ public class AppController {
         Optional<Integer> opt2 = Optional.ofNullable(numara2);
 
         opt
-                .map(num->Math.pow(num,2))
+                .map(num -> Math.pow(num, 2))
                 .ifPresent(System.out::println);
 
         String message = null;
