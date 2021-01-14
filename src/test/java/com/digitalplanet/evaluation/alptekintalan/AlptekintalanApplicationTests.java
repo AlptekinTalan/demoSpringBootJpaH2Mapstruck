@@ -9,20 +9,4 @@ import java.util.stream.IntStream;
 @SpringBootTest
 class alptekintalanApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
-
-	@Test
-	void test1() {
-		System.out.println("Dene");
-	}
-
-	@Test
-	void lamda() {
-
-		IntStream.range(1,5);
-		System.out.println("Dene");
-	}
-
 }

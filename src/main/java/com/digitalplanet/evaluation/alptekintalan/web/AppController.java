@@ -63,7 +63,7 @@ public class AppController {
         int number1=0;
         int number2=2;
         int bolum=0;
-        bolum = number2/a;
+        bolum = number2/number1;
 
         return ResponseEntity.ok("");
     }
