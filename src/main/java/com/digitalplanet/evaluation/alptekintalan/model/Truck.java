@@ -1,5 +1,7 @@
 package com.digitalplanet.evaluation.alptekintalan.model;
 
+import com.digitalplanet.evaluation.alptekintalan.modelDto.VehicleDto;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -23,5 +25,4 @@ public class Truck extends Vehicle{
                 "name='" + name + '\'' +
                 '}';
     }
-
 }

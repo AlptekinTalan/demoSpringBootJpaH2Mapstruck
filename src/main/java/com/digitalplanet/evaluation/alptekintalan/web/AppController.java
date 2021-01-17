@@ -9,9 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @Controller
@@ -24,48 +23,6 @@ public class AppController {
     @ResponseBody
     public String welcome() {
         return "Welcome to Alptekin Talan demo project";
-    }
-
-    @RequestMapping(method = RequestMethod.GET, value = "/test1")
-    public ResponseEntity<?> test1() {
-        List<CarDto> cars = appService.findCars();
-
-        Integer numara = 2;
-
-        Optional<Integer> opt = Optional.ofNullable(numara);
-
-        opt.ifPresent(num -> {
-            Double karesi = Math.pow(num, 2);
-            System.out.println("Sonuç: " + karesi);
-        });
-
-        Integer numara2 = null;
-
-        Optional<Integer> opt2 = Optional.ofNullable(numara2);
-
-        opt
-                .map(num -> Math.pow(num, 2))
-                .ifPresent(System.out::println);
-
-        String message = null;
-        Optional<String> opt3 = Optional.ofNullable(message);
-
-        opt3
-                .filter(m -> m.length() > 5)
-                .ifPresent(System.out::println);
-
-        return ResponseEntity.ok(cars);
-    }
-
-    @RequestMapping(method = RequestMethod.GET, value = "/test2")
-    public ResponseEntity<?> test2() {
-
-        int number1=0;
-        int number2=2;
-        int bolum=0;
-        bolum = number2/number1;
-
-        return ResponseEntity.ok("");
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/car/list")
@@ -86,15 +43,20 @@ public class AppController {
         List<CarDto> cars = appService.findCars();
         List<TruckDto> trucks = appService.findTrucks();
 
-        List<VehicleDto> vehicles = new ArrayList<>();
 
-        for (int i = 0; i < cars.size(); i++) {
-            vehicles.add(new VehicleDto(cars.get(i).getCardtoid(), cars.get(i).getCardtoname()));
-        }
-        for (int i = 0; i < trucks.size(); i++) {
-            vehicles.add(new VehicleDto(trucks.get(i).getId(), trucks.get(i).getName()));
-        }
-        return ResponseEntity.ok(vehicles);
+        List<VehicleDto> vehicleDtos = cars.stream()
+                .map(VehicleDto::mapForCarDTO)
+                .collect(Collectors.toList());
+
+        List<VehicleDto> collect = trucks.stream()
+                .map(VehicleDto::mapForTruckDto)
+                .collect(Collectors.toList());
+
+        vehicleDtos.addAll(collect);
+
+        vehicleDtos.forEach(System.out::println);
+
+        return ResponseEntity.ok(vehicleDtos);
     }
 
     @RequestMapping(value = "/car/add", method = RequestMethod.POST)

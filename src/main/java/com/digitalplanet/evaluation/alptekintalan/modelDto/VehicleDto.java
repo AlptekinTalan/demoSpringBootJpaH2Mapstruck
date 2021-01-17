@@ -1,5 +1,8 @@
 package com.digitalplanet.evaluation.alptekintalan.modelDto;
 
+import com.digitalplanet.evaluation.alptekintalan.model.Car;
+import com.digitalplanet.evaluation.alptekintalan.model.Truck;
+
 public class VehicleDto {
     private Long id;
     private String name;
@@ -33,5 +36,13 @@ public class VehicleDto {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    public static VehicleDto mapForTruckDto(TruckDto truckDto) {
+        return new VehicleDto(truckDto.getId(), truckDto.getName());
+    }
+
+    public static VehicleDto mapForCarDTO(CarDto carDto) {
+        return new VehicleDto(carDto.getCardtoid(), carDto.getCardtoname());
     }
 }
